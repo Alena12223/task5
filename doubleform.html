@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+        {% block content %}
+            <title>{{ title }}</title>
+            <h1>Аварийный доступ</h1>
+            <img src="{{ url_for('static', filename='img/mars_auth.png') }}"
+             alt="Эмблема миссии">
+            {% if access == 'True' %}
+                <p class="text-success">Доступ к системам корабля разрешен!</p>
+                <p><strong>id капитана:</strong> {{ id }}</p>
+                <p><strong>Пароль капитана:</strong> {{ password }}</p>
+            {% else %}
+                <p>Проверьте правильность введенных данных!</p>
+            {% endif %}
+        {% endblock %}
